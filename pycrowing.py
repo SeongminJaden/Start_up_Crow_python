@@ -837,6 +837,6 @@ if __name__ == "__main__":
 
     sleep(1)
     print('크롤링 끝!')
-    token = "xoxb-5612875251568-5586282896005-3eZ7ZzvFdqiiNFlqfyFv3hQQ"
+    token = "your slack api token"
     slack = SlackAPI(token)
     slack.file_read_to_slack()
