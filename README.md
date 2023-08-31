@@ -1,5 +1,8 @@
 # Start_up_Crow_python
 python으로 제작된 정부지원사업 크롤링 프로그램입니다.
+용량제한으로 Github에 올리지 못해 구글 드라이브로 공유합니다.
+https://drive.google.com/file/d/1yORX6ihdCDVg1nusBrvK67p0Ry7vVqBC/view?usp=drive_link
+
 
 -사용법-
 1. .zip파일을 다운로드하고 압축해제한다.(압축해제 위치 아무곳이나 가능)
