@@ -70,8 +70,10 @@ class evaluator(object):
         f.write('\n')
         f.close()
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.page_source_get()
         self.date_compare()
         self.title_keyword_detect()

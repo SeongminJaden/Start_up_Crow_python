@@ -83,8 +83,10 @@ class KIAT(object):
         self.driver.get('https://www.kiat.or.kr/front/board/boardContentsListPage.do?board_id=90&MenuId=b159c9dac684471b87256f1e25404f5e')
         sleep(2)
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.driver = self.driver_return()
         self.main_page_in()
         self.title_status_get()

@@ -86,8 +86,10 @@ class IP(object):
     def page_in(self, index):
         self.driver.execute_script(self.page_script[index])
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.driver = self.driver_return()
         self.main_page_in()
         self.driver.close()

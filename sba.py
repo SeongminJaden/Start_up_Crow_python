@@ -55,8 +55,10 @@ class Seoul(object):
         f = open('./Output.txt', 'w', encoding='UTF-8')
         f.close()
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.main_page_in()
 
 

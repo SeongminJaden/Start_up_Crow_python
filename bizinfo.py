@@ -106,8 +106,10 @@ class madang(object):
         f = open('./Output.txt', 'w', encoding='UTF-8')
         f.close()
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         for i in range(1, self.page_number + 1):
             self.today_date_set()
             self.page_source_get(i)

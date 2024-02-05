@@ -136,8 +136,10 @@ class selenium(object):
     def txt_refresh(self):
         f = open('./Output.txt', 'w', encoding='UTF-8')
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.driver = self.driver_return()
         self.main_page_in()
         self.date_get()
