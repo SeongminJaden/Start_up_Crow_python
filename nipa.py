@@ -62,7 +62,7 @@ class nipa(object):
             if self.date_list[i] == date_str:
                 self.title_index.append(i)
     def keyword_detect(self):
-        f = open('./Output.txt', 'w', encoding='UTF-8')
+        f = open('./Output.txt', 'a', encoding='UTF-8')
         for i in self.title_index:
             req = requests.get(f"{self.main_page}{self.href_list[i]}")
             soup = BeautifulSoup(req.text, "html.parser")
@@ -87,7 +87,14 @@ class nipa(object):
             print("우리가 지원할 사업은 없습니다.")
             f.close()
 
-    def start(self):
+    def txt_refresh(self):
+        f = open('./Output.txt', 'w', encoding='UTF-8')
+        f.close()
+
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.main_page_in()
         self.get_title_date()
         self.date_filter()

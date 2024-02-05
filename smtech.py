@@ -70,8 +70,10 @@ class SMTECH(object):
         f = open('./Output.txt', 'w', encoding='UTF-8')
         f.close()
 
-    def start(self):
-        self.txt_refresh()
+    def start(self, refresh = True):
+        if refresh:
+            self.txt_refresh()
+
         self.img_type_get()
         self.title_get()
         self.href_get()
