@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import *
+#%%
+import PyQt5.QtWidgets as qtw
 import os
 import sys
 import time
@@ -8,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+#%%
 class nipa(object):
     def __init__(self):
         self.main_page = 'https://www.nipa.kr'
@@ -97,7 +99,7 @@ class nipa(object):
         self.keyword_detect()
 
 
-class WindowClass(QMainWindow):
+class WindowClass(qtw.QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -105,7 +107,7 @@ class WindowClass(QMainWindow):
         window_width = 260
         window_height = 150
 
-        screen = QDesktopWidget().screenGeometry()
+        screen = qtw.QDesktopWidget().screenGeometry()
         x = (screen.width() - window_width) // 2
         y = (screen.height() - window_height) // 2
 
@@ -114,7 +116,7 @@ class WindowClass(QMainWindow):
         self.show()
         self.site = None
     def initbox_1(self):
-        self.comboBox = QComboBox(self)
+        self.comboBox = qtw.QComboBox(self)
         self.comboBox.setFixedSize(200, 30)
         self.comboBox.addItem('선택')
         self.comboBox.addItem('전체크롤링')
@@ -128,7 +130,7 @@ class WindowClass(QMainWindow):
         self.comboBox.addItem('스타트업플러스')
         self.comboBox.activated[str].connect(self.selectedComboItem)
         self.comboBox.move(30, 30)
-        self.button = QPushButton("크롤링!", self)
+        self.button = qtw.QPushButton("크롤링!", self)
         self.button.setFixedSize(200, 30)
         self.button.move(30, 90)
         self.button.clicked.connect(self.select_site)
@@ -194,12 +196,13 @@ class WindowClass(QMainWindow):
             print("선택해라 게이야")
         else:
             path = os.getcwd()
-            path = path + '\\' + self.site +'.py'
-            subprocess.call(path, shell=True)
+            path = path + f'\\{self.site}.py'
+            subprocess.call(args=['python', path], shell=True)
             print("주현수가 준거 여기에 적용!")
 
+#%%
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app = qtw.QApplication(sys.argv)
     myWindow = WindowClass()
     myWindow.show()
     app.exec_()
