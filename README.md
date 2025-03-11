@@ -1,23 +1,56 @@
-Start_up_Crow_python</br>
-python으로 제작된 정부지원사업 크롤링 프로그램입니다. 용량제한으로 Github에 올리지 못해 구글 드라이브로 공유합니다. https://drive.google.com/file/d/1yORX6ihdCDVg1nusBrvK67p0Ry7vVqBC/view?usp=drive_link</br>
--사용법-</br>
-</br>
-.zip파일을 다운로드하고 압축해제한다.(압축해제 위치 아무곳이나 가능)</br>
-폴더 내 "정부지원사업크롤링프로그램.exe"를 실행한다.</br>
--주의사항-</br>
-</br>
-폴더 내 "116"폴더는 건들지 말것</br>
-116폴더와 정부지원사업크롤링프로그램.exe는 항상 같은 디렉토리에 위치할것</br>
--설명- </br>
-116 - chromeDriver로 selenium을 사용하기 위한 크롬 드라이버 입니다. python selenium을 사용하여 제작되었으며 기본프로그램 설정에서 "웹" 기본프로그램을 Chrome으로 바꾸시고 사용하시는것을 추천드립니다.</br>
-</br>
--정부지원사이트 리스트-</br>
-</br>
-K-Startup</br>
-SBA</br>
-기업마당</br>
-IITP</br>
-Kiat</br>
-Nipa</br>
-SMTECH</br>
-사용하면서 불편하신점이나 궁금한 사항, 개선사항이 있으시면 언제든 이메일로 연락주시면 빠르게 답변해드리겠습니다.****</br>
+Qt-based Web Crawler GUI
+
+This project provides a PyQt-based graphical user interface (GUI) for selecting and running web crawlers for various websites.
+
+Requirements
+
+Ensure you have the following dependencies installed before running the script:
+
+System Requirements
+
+Python 3.x
+
+PyQt5 for the GUI
+
+Install Required Python Packages
+
+pip install PyQt5
+
+Usage
+
+Run the following command to execute the script:
+
+python main.py
+
+How It Works
+
+The application opens a PyQt-based GUI.
+
+The user can select a website from a dropdown menu.
+
+When the '크롤링!' button is clicked, the selected web scraper module runs.
+
+The script prints the corresponding website link and starts the crawling process.
+
+If '전체크롤링' is selected, all scrapers are executed sequentially.
+
+Features
+
+Select individual web crawlers for specific websites.
+
+Run all available crawlers at once.
+
+The script maintains a dictionary of available crawling modules.
+
+Crawled data is saved in Output.txt when '전체크롤링' is executed.
+
+Notes
+
+Ensure all required modules (bizinfo, iitp, ip, kiat, kstartup, nipa, sba, smtech, startuppark) are properly implemented.
+
+If a module is missing or not correctly imported, the script may not function as expected.
+
+License
+
+This project is open-source and available under the MIT License.
+
